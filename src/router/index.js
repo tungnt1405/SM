@@ -1,33 +1,33 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import HomeView from "../views/HomeView.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
+    path: "/",
+    name: "home",
     component: HomeView,
-    meta:{title: "Trang chủ"}
+    meta: { title: "Trang chủ" },
   },
   {
-    path: '/about',
-    name: 'about',
-    meta:{title: "Liên hệ"},
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+    path: "/manage",
+    name: "manage",
+    meta: { title: "Quản lý chi tiêu" },
+    component: () => import("../views/Manage/IndexView.vue"),
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-router.beforeEach((to, from, next)=>{
+router.beforeEach((to, from, next) => {
   document.title = to.meta.title;
   next();
-})
+});
 
-export default router
+export default router;

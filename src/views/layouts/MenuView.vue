@@ -3,7 +3,7 @@
     <v-btn
       v-for="(menu, index) in menus"
       :key="index"
-      class="mr-2"
+      class="mr-2 mb-2"
       color="primary"
       :to="menu.href"
       depressed
@@ -18,8 +18,9 @@ export default {
   name: "MenuView",
   data: () => ({
     menus: [
-      { title: "Danh sách", href: "/" },
-      { title: "Tháng", href: "/about" },
+      { title: "Trang chủ", href: "/" },
+      { title: "Quản lý", href: "/manage" },
+      { title: "Tháng", href: "/months" },
       { title: "Tuần", href: "/weeks" },
       { title: "Khác", href: "/others" },
     ],
