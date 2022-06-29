@@ -17,6 +17,24 @@ const routes = [
     meta: { title: "Quản lý chi tiêu" },
     component: () => import("../views/Manage/IndexView.vue"),
   },
+  {
+    path: "/months",
+    name: "months",
+    meta: { title: "Chi tiêu các tháng" },
+    component: () => import("../views/Manage/MonthView.vue"),
+  },
+  {
+    path: "/weeks",
+    name: "weeks",
+    meta: { title: "Chi tiêu trong tuần" },
+    component: () => import("../views/Manage/WeekView.vue"),
+  },
+  {
+    path: "/others",
+    name: "others",
+    meta: { title: "Khác" },
+    component: () => import("../views/Manage/OthersView.vue"),
+  },
 ];
 
 const router = new VueRouter({

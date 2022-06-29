@@ -1,7 +1,7 @@
 <template>
   <v-app-bar app color="primary" dark>
     <div class="d-flex align-center">
-      <h1>Quản lý chi tiêu</h1>
+      <h1 class="respon-title text-uppercase">Quản lý chi tiêu</h1>
     </div>
 
     <v-spacer></v-spacer>
@@ -19,4 +19,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+@media screen and (max-width: 820px) {
+  .respon-title {
+    font-size: 18px;
+  }
+}
+</style>
