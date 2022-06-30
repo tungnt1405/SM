@@ -5,6 +5,7 @@ namespace App;
 class Router
 {
     private array $hanlders;
+    private $notFoundHandler;
     private const METHOD_POST = 'POST';
     private const METHOD_GET = 'GET';
 
@@ -51,7 +52,13 @@ class Router
         ];
     }
 
-
+    /*
+        hanlders not found
+    */
+    public function addNotFoundHandler($handler): void
+    {
+        $this->notFoundHandler = $handler;
+    }
     /*
         run handler method
     */
@@ -68,8 +75,29 @@ class Router
             }
         }
 
+        if (is_string($callback)) {
+            $parts = explode('::', $callback);
+            if (is_array($parts)) {
+                $className = array_shift($parts);
+
+                $handler = new $className;
+
+                $method = array_shift($parts);
+                $callback = [$handler, $method];
+            }
+        }
+
+        if (!$callback) {
+            header('HTTP/1.0 404 Not Found');
+            if (!empty($this->notFoundHandler)) {
+                $callback = $this->notFoundHandler;
+            }
+            // return;
+        }
+
         call_user_func_array($callback, [
-            array_merge($GLOBALS)
+            // array_merge($GLOBALS)
+            array_merge($_GET, $_POST)
         ]);
     }
 }
