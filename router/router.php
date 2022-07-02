@@ -16,13 +16,13 @@ $router->get('/about', function (array $params = []) {
     }
 });
 $router->get('/handler', Handler::class . "::exec");
-$router->post('/handler', function ($params) {
+$router->put('/handler', function ($params) {
     dd($params);
     // echo json_encode(["msg" => "handler", "welcome" => "param:" . $params]);
 });
 
 $router->addNotFoundHandler(function () {
     $title = "404 Not Found";
-    require_once __DIR__ . "/Views/Error/404.phtml";
+    require_once __DIR__ . "/Views/Error/404.php";
 });
 $router->run();

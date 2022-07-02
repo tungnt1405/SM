@@ -11,6 +11,7 @@
 <body>
     <h1>Form Test - <?= $name ?></h1>
     <form action="/handler" method="post">
+        <input type="hidden" name'_METHOD' value="PUT">
         <input type="text" name="test">
         <button type="submit">submit</button>
     </form>

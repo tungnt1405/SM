@@ -7,6 +7,7 @@ class Router
     private array $hanlders;
     private $notFoundHandler;
     private const METHOD_POST = 'POST';
+    private const METHOD_PUT = 'PUT';
     private const METHOD_GET = 'GET';
 
     public static $router_instance = null;
@@ -37,6 +38,10 @@ class Router
     public function post(string $path, $handler): void
     {
         $this->addHandler(self::METHOD_POST, $path, $handler);
+    }
+    public function put(string $path, $handler): void
+    {
+        $this->addHandler(self::METHOD_PUT, $path, $handler);
     }
 
 
