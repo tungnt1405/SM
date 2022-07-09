@@ -45,9 +45,9 @@ class Routes
 
         //TODO: if callback returns string then find views
         if (is_string($callback)) {
-//            echo $this->renderView($callback);
-//            die;
-            return $this->renderView($callback);
+            echo $this->renderView($callback);
+            die;
+//            return $this->renderView($callback);
         }
 
         return call_user_func($callback);
