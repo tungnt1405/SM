@@ -2,16 +2,12 @@
 
 namespace app\controllers;
 
-use app\core\Application;
 
-class AppController
+use app\core\Controller;
+
+class AppController extends Controller
 {
-    public function contact(){
-        echo Application::$app->routes->renderView('contact');
+    public function test(){
+        return $_POST['_method'];
     }
-
-    public function postContact(){
-        echo "HiHi";
-    }
-
 }
