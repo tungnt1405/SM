@@ -6,9 +6,11 @@ class Router
 {
     public array $routes = array();
     public Request $request;
-    public function __construct(Request $request)
+    public Response $response;
+    public function __construct(Request $request, Response $response)
     {
-        $this->request = $request;
+        $this->request  = $request;
+        $this->response = $response;
     }
 
     public function get($path, $callback)
@@ -24,6 +26,7 @@ class Router
 
         if($callback === false){
             echo "NOT FOUND";
+            $this->response->httpStatusCode(404);
             die;
         }
 
