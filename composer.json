@@ -1,0 +1,15 @@
+{
+    "name": "spending/management",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "tungnt1405",
+            "email": "ntt140520.bk@gmail.com"
+        }
+    ],
+    "require": {}
+}
