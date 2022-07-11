@@ -1,0 +1,8 @@
+<Files .htaccess>
+Order Allow,Deny
+Deny from all
+</Files>
+RewriteEngine on
+
+RewriteRule ^vendor/(.*)?$ / [F,L]
+RewriteRule ^composer\.(lock|json)$ / [F,L]

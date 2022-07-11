@@ -2,14 +2,17 @@
 
 namespace app\core;
 
+require_once  __DIR__ . '/../plugins/my-custom.php';
+
 class Router
 {
     public array $routes = array();
     public Request $request;
     public Response $response;
+
     public function __construct(Request $request, Response $response)
     {
-        $this->request  = $request;
+        $this->request = $request;
         $this->response = $response;
     }
 
@@ -24,12 +27,38 @@ class Router
         $method = $this->request->method();
         $callback = $this->routes[$method][$path] ?? false;
 
-        if($callback === false){
+        if ($callback === false) {
             echo "NOT FOUND";
             $this->response->httpStatusCode(404);
             die;
         }
 
+        if (is_string($callback)) {
+            echo $this->renderView($callback); die();
+        }
+
         echo call_user_func($callback);
+    }
+
+    public function renderView($view)
+    {
+        $layout = $this->renderLayout();
+        $content_view = $this->renderContentView($view);
+
+        return str_ireplace('{{ content }}',$content_view, $layout);
+    }
+
+    public function renderLayout()
+    {
+        ob_start();
+        include_once __DIR__ . "/../Views/layouts/main.php";
+        return ob_get_clean();
+    }
+
+    public function renderContentView($view)
+    {
+        ob_start();
+        include_once __DIR__ . "/../Views/$view.php";
+        return ob_get_clean();
     }
 }

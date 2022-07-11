@@ -1,6 +1,6 @@
 <?php
 
-if (function_exists('dd')) {
+if (!function_exists('dd')) {
     function dd($data)
     {
         highlight_string("<?php\n " . var_export($data, true) . "?>");
