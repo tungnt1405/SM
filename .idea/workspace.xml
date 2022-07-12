@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac20f031-3ce0-4f6d-af76-307957afed82" name="Changes" comment="respone core">
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/layouts/main.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/welcome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="ac20f031-3ce0-4f6d-af76-307957afed82" name="Changes" comment="show view">
+      <change afterPath="$PROJECT_DIR$/Views/auth/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/auth/register.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/layouts/layout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/AppController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/AuthController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/PagesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/layouts/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/welcome.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Application.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Request.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/my-custom.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/my-custom.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/route.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/route.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +47,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="2BhhpFr3AuyfwA5dtpsyISncUld" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -83,7 +87,8 @@
       <workItem from="1657379922838" duration="3954000" />
       <workItem from="1657383925763" duration="6412000" />
       <workItem from="1657413345764" duration="7946000" />
-      <workItem from="1657557289815" duration="5980000" />
+      <workItem from="1657557289815" duration="6295000" />
+      <workItem from="1657641626511" duration="4153000" />
     </task>
     <task id="LOCAL-00001" summary="change source init">
       <created>1657390148933</created>
@@ -127,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657560891321</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="show view">
+      <created>1657563472740</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657563472740</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +163,7 @@
     <MESSAGE value="reset init" />
     <MESSAGE value="update init new" />
     <MESSAGE value="respone core" />
-    <option name="LAST_COMMIT_MESSAGE" value="respone core" />
+    <MESSAGE value="show view" />
+    <option name="LAST_COMMIT_MESSAGE" value="show view" />
   </component>
 </project>
