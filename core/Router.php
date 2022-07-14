@@ -66,7 +66,7 @@ class Router
 
     public function renderLayout()
     {
-        $layout = Application::$app->controller->layout;
+        $layout = Application::$app->controller->layout ?? 'main';
         ob_start();
         include_once __DIR__ . "/../Views/layouts/$layout.php";
         return ob_get_clean();
