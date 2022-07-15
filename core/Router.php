@@ -39,10 +39,11 @@ class Router
         }
 
         if (is_string($callback)) {
-            echo $this->renderView($callback); die();
+            echo $this->renderView($callback);
+            die();
         }
 
-        if(is_array($callback)) {
+        if (is_array($callback)) {
             Application::$app->controller = new $callback[0]();
             $callback[0] = Application::$app->controller;
         }
@@ -55,13 +56,13 @@ class Router
         $layout = $this->renderLayout();
         $content_view = $this->renderContentView($view, $params);
 
-        return str_ireplace('{{ content }}',$content_view, $layout);
+        return str_ireplace('{{ content }}', $content_view, $layout);
     }
 
     public function renderContent($view)
     {
         $layout = $this->renderLayout();
-        return str_ireplace('{{ content }}',$view, $layout);
+        return str_ireplace('{{ content }}', $view, $layout);
     }
 
     public function renderLayout()
@@ -74,7 +75,7 @@ class Router
 
     public function renderContentView($view, $params = [])
     {
-        foreach ($params as $key => $value){
+        foreach ($params as $key => $value) {
             $$key = $value;
         }
         ob_start();
