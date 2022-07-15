@@ -11,12 +11,15 @@ class Application
     public Response $response;
     public static Application $app;
     public Controller $controller;
-    public function __construct()
+    public Database $db;
+    public function __construct(array $config)
     {
         self::$app = $this;
         $this->request = new Request();
         $this->response = new Response();
         $this->router = new Router($this->request, $this->response);
+
+        $this->db = new Database($config['db']);
     }
 
     public function run(){

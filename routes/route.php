@@ -1,5 +1,4 @@
 <?php
-require_once  __DIR__ . '/../core/app.php';
 
 $app->router->get('/', [\app\controllers\PagesController::class,"index"]);
 $app->router->get('/login', [\app\controllers\AuthController::class,"login"]);
