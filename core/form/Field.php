@@ -28,7 +28,8 @@ class Field
     public function __toString()
     {
         // TODO: Implement __toString() method.
-        return sprintf('
+        return sprintf(
+            '
           <div class="form-group">
             <label>%s</label>
             <input type="%s" name="%s" value="%s" class="form-control%s">
@@ -36,11 +37,12 @@ class Field
                 %s
             </div>
           </div>
-        ',$this->attribute,
+        ',
+            $this->model->getLabels($this->attribute),
             $this->type,
             $this->attribute,
             $this->model->{$this->attribute},
-            $this->model->hasError($this->attribute) ?' is-invalid' :'',
+            $this->model->hasError($this->attribute) ? ' is-invalid' : '',
             $this->model->getFirstError($this->attribute)
         );
     }

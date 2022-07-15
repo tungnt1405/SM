@@ -16,4 +16,9 @@ class Controller
     {
         $this->layout = $layout;
     }
+
+    public function redirect($url)
+    {
+        Application::$app->response->redirect($url);
+    }
 }

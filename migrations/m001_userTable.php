@@ -7,24 +7,24 @@ class m001_userTable{
     {
         $db = Application::$app->db;
         
-        $sql = 'CREATE TABLE users (
+        $SQL = "CREATE TABLE users (
             id INT AUTO_INCREMENT PRIMARY KEY,
             email VARCHAR(255) NOT NULL,
             firstname VARCHAR(255) NOT NULL,
             lastname VARCHAR(255) NOT NULL,
             password VARCHAR(255) NOT NULL,
-            status TINYINT NOT NULL,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        ) ENGINE =INNODB';
+            status TINYINT DEFAULT 0,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        ) ENGINE=INNODB;";
         
-        $db->pdo->exec($sql);
+        $db->pdo->exec($SQL);
     }
     public function down()
     {
         $db = Application::$app->db;
         
-        $sql = 'DROP TABLE users;';
+        $SQL = 'DROP TABLE users;';
         
-        $db->pdo->exec($sql);
+        $db->pdo->exec($SQL);
     }
 }

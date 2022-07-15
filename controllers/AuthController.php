@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\core\Application;
 use app\core\Request;
 use app\models\UsersModel;
 
@@ -17,8 +18,9 @@ class AuthController extends AppController
         $users =  new UsersModel();
         if ($request->isPost()) {
             $users->loadData($request->getBody());
-            if ($users->validate() && $users->register()) {
-                return 'Success';
+            if ($users->validate() && $users->save()) {
+                Application::$app->session->setFlash('success', 'User registered successfully.');
+                $this->redirect('/');
             }
             return $this->render('auth/register', [
                 'model' => $users

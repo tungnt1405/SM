@@ -4,6 +4,8 @@ namespace app\core;
 
 // require_once  __DIR__ . '/../plugins/my-custom.php';
 
+use app\core\Session\Session;
+
 class Application
 {
     public Router $router;
@@ -13,6 +15,7 @@ class Application
     public static string $root_path;
     public Controller $controller;
     public Database $db;
+    public Session $session;
     public function __construct($root_path, array $config)
     {
         self::$app = $this;
@@ -20,6 +23,7 @@ class Application
         $this->request = new Request();
         $this->response = new Response();
         $this->router = new Router($this->request, $this->response);
+        $this->session = new Session();
 
         $this->db = new Database($config['db']);
     }
