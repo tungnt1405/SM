@@ -2,7 +2,7 @@
 
 namespace app\core;
 
-require_once  __DIR__ . '/../plugins/my-custom.php';
+// require_once  __DIR__ . '/../plugins/my-custom.php';
 
 class Application
 {
@@ -10,11 +10,13 @@ class Application
     public Request $request;
     public Response $response;
     public static Application $app;
+    public static string $root_path;
     public Controller $controller;
     public Database $db;
-    public function __construct(array $config)
+    public function __construct($root_path, array $config)
     {
         self::$app = $this;
+        self::$root_path = $root_path;
         $this->request = new Request();
         $this->response = new Response();
         $this->router = new Router($this->request, $this->response);
