@@ -1,31 +1,30 @@
-<div class="container">
-    <?php $form = \app\core\form\Form::create('post','/register')?>
-    <div class="row">
-        <div class="col-md-6">
-            <?php echo $form->field($model,'firstName')?>
-        </div>
-        <div class="col-md-6">
-            <?php echo $form->field($model,'lastName')?>
-        </div>
+<?php $form = \app\core\form\Form::create('post','/register')?>
+<div class="row">
+    <div class="col-md-6">
+        <?php echo $form->field($model,'firstName')?>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <?php echo $form->field($model,'email')?>
-        </div>
-        <div class="col-md-6">
-            <?php echo $form->field($model,'password')->passwordField()?>
-        </div>
+    <div class="col-md-6">
+        <?php echo $form->field($model,'lastName')?>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <?php echo $form->field($model,'passwordConfirmation')->passwordField()?>
-        </div>
-        <div class="col-md-6">
-        </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Register</button>
-    <?php \app\core\form\Form::end()?>
 </div>
+<div class="row">
+    <div class="col-md-6">
+        <?php echo $form->field($model,'email')?>
+    </div>
+    <div class="col-md-6">
+        <?php echo $form->field($model,'password')->passwordField()?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <?php echo $form->field($model,'passwordConfirmation')->passwordField()?>
+    </div>
+    <div class="col-md-6">
+        <?php echo $form->field($model,'avatar')?>
+    </div>
+</div>
+<button type="submit" class="btn btn-primary">Register</button>
+<?php \app\core\form\Form::end()?>
 <!--<h1 class="text-center">Resgister Users</h1>-->
 <!--<div class="container">-->
 <!--    <form action="/register" method="post">-->

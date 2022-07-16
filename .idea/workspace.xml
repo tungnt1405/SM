@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac20f031-3ce0-4f6d-af76-307957afed82" name="Changes" comment="update htaccess and base controller">
-      <change afterPath="$PROJECT_DIR$/core/Model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/form/Field.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/form/Form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/UsersModel.php" afterDir="false" />
+    <list default="true" id="ac20f031-3ce0-4f6d-af76-307957afed82" name="Changes" comment="model for application">
+      <change afterPath="$PROJECT_DIR$/core/DbModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Session/Session.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/m002_add_avatar_userTable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/auth/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/auth/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/layouts/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Application.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/my-custom.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/my-custom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Response.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Response.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/m001_userTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/m001_userTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/UsersModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/UsersModel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +44,12 @@
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
     </include_path>
   </component>
   <component name="ProjectId" id="2BhhpFr3AuyfwA5dtpsyISncUld" />
@@ -55,7 +66,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/xampp/htdocs/SM/views",
+    "last_opened_file_path": "D:/xampp/htdocs/SM",
     "nodejs_package_manager_path": "npm",
     "php.override.implement.member.chooser.php.doc": "NONE",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -64,6 +75,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\SM" />
       <recent name="D:\xampp\htdocs\SM\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -86,7 +98,8 @@
       <workItem from="1657557289815" duration="6295000" />
       <workItem from="1657641626511" duration="4616000" />
       <workItem from="1657812117179" duration="410000" />
-      <workItem from="1657814690636" duration="6116000" />
+      <workItem from="1657814690636" duration="6251000" />
+      <workItem from="1657893725291" duration="9672000" />
     </task>
     <task id="LOCAL-00001" summary="change source init">
       <created>1657390148933</created>
@@ -144,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657645991468</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="model for application">
+      <created>1657820952195</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1657820952195</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +190,7 @@
     <MESSAGE value="respone core" />
     <MESSAGE value="show view" />
     <MESSAGE value="update htaccess and base controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="update htaccess and base controller" />
+    <MESSAGE value="model for application" />
+    <option name="LAST_COMMIT_MESSAGE" value="model for application" />
   </component>
 </project>

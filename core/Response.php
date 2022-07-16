@@ -8,4 +8,9 @@ class Response
     {
         return http_response_code($status);
     }
+
+    public function redirect($url)
+    {
+        header('Location: '. $url);
+    }
 }

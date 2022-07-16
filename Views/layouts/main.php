@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Customize Router</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -38,7 +38,13 @@
         </ul>
     </div>
 </nav>
-<div>
+<div class="container">
+    <?php if(!empty(\app\core\Application::$app->session->getFlash('success'))):?>
+        <div class="alert alert-success">
+            <?php echo \app\core\Application::$app->session->getFlash('success')?>
+        </div>
+    <?php endif;?>
+<!--    <div class="alert alert-danger"></div>-->
     {{ content }}
 </div>
 <!-- Optional JavaScript; choose one of the two! -->
