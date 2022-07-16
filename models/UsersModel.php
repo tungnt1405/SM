@@ -30,6 +30,10 @@ class UsersModel extends DbModel
         return parent::save();
     }
 
+    public function getPrimaryKey(): string
+    {
+        return 'id';
+    }
     public function rules(): array
     {
         // TODO: Implement rules() method.

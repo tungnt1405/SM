@@ -4,13 +4,25 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\Request;
+use app\core\Response;
+use app\models\LoginModel;
 use app\models\UsersModel;
 
 class AuthController extends AppController
 {
-    public function login()
+    public function login(Request $request, Response $response)
     {
-        return $this->render('auth/login');
+        $login = new LoginModel();
+        if ($request->isPost()) {
+            $login->loadData($request->getBody());
+            if ($login->validate() && $login->login()) {
+                $this->redirect('/');
+                return;
+            }
+        }
+        return $this->render('auth/login', [
+            'model' => $login,
+        ]);
     }
 
     public function register(Request $request)

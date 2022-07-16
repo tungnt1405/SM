@@ -9,6 +9,7 @@ use app\core\Session\Session;
 class Application
 {
     public Router $router;
+    public string $userClass;
     public Request $request;
     public Response $response;
     public static Application $app;
@@ -16,8 +17,10 @@ class Application
     public Controller $controller;
     public Database $db;
     public Session $session;
+    public ?DbModel $user;
     public function __construct($root_path, array $config)
     {
+        $this->userClass = $config['userClass'];
         self::$app = $this;
         self::$root_path = $root_path;
         $this->request = new Request();
@@ -26,9 +29,18 @@ class Application
         $this->session = new Session();
 
         $this->db = new Database($config['db']);
+
+        $primary_key_value = $this->session->get('user');
+        if ($primary_key_value) {
+            $primary_key  = $this->userClass::getPrimaryKey();
+            $this->user = $this->userClass::findOne([$primary_key => $primary_key_value]);
+        } else {
+            $this->user = null;
+        }
     }
 
-    public function run(){
+    public function run()
+    {
         $this->router->resolve();
     }
 
@@ -48,4 +60,18 @@ class Application
         $this->controller = $controller;
     }
 
+    public function login(DbModel $user)
+    {
+        $this->user = $user;
+        $primary_key = $user->getPrimaryKey();
+        $primary_key_value = $user->{$primary_key};
+        $this->session->set('user', $primary_key_value);
+        return true;
+    }
+
+    public function logout()
+    {
+        $this->user = null;
+        $this->session->remove('user');
+    }
 }
