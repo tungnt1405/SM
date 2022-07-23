@@ -1,8 +1,11 @@
 # Ứng dụng quản lý chi tiêu
-
--- gồm 2 phần chính:
-+ Phần giao diện
-+ Phần API
-
--- Với giao diện được được xây dựng bằng vue js
--- Còn với API được xây dựng bằng PHP
+Phần Backend:
++ Bộ khung có dựng sẵn route,form, validation and authentication
++ tích hợp bộ chạy env, migrations
+``` 
+php migrations.php
+```
+để chạy các file mục migrations.
+set up thông tin db trong .env copy từ .env.example
++ chạy `composer install` để cài vendor hoặc `composer update` cập nhật thêm thư mục vendor
++ đăng ký route vào mục routes/route.php
