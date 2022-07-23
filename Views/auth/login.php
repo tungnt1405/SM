@@ -1,3 +1,4 @@
+<?php $this->title = 'Login';?>
 <h1 class="text-center mt-3">Login Form</h1>
 <?php $form = \app\core\form\Form::create('post', '/login') ?>
 <div class="row">

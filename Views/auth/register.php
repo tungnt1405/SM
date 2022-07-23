@@ -1,30 +1,37 @@
-<?php $form = \app\core\form\Form::create('post','/register')?>
+<?php
+use \app\core\form\TextareaField;
+$this->title = 'Đăng ký'
+?>
+
+<?php $form = \app\core\form\Form::create('post', '/register') ?>
 <div class="row">
     <div class="col-md-6">
-        <?php echo $form->field($model,'firstName')?>
+        <?php echo $form->field($model, 'firstname') ?>
     </div>
     <div class="col-md-6">
-        <?php echo $form->field($model,'lastName')?>
+        <?php echo $form->field($model, 'lastname') ?>
     </div>
 </div>
 <div class="row">
     <div class="col-md-6">
-        <?php echo $form->field($model,'email')?>
+        <?php echo $form->field($model, 'email') ?>
     </div>
     <div class="col-md-6">
-        <?php echo $form->field($model,'password')->passwordField()?>
+        <?php echo $form->field($model, 'password')->passwordField() ?>
     </div>
 </div>
 <div class="row">
     <div class="col-md-6">
-        <?php echo $form->field($model,'passwordConfirmation')->passwordField()?>
+        <?php echo $form->field($model, 'passwordConfirmation')->passwordField() ?>
     </div>
-    <div class="col-md-6">
-        <?php echo $form->field($model,'avatar')?>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <?php echo new TextareaField($model, 'avatar') ?>
     </div>
 </div>
 <button type="submit" class="btn btn-primary">Register</button>
-<?php \app\core\form\Form::end()?>
+<?php \app\core\form\Form::end() ?>
 <!--<h1 class="text-center">Resgister Users</h1>-->
 <!--<div class="container">-->
 <!--    <form action="/register" method="post">-->
@@ -32,10 +39,15 @@
 <!--            <div class="col-md-6">-->
 <!--                <div class="form-group">-->
 <!--                    <label for="firstName">First Name</label>-->
-<!--                    <input type="text" name="firstName" id="firstName" value="--><?php //echo $model->firstName ?? '' ?><!--"-->
-<!--                           placeholder="First Name" class="form-control --><?php //echo $model->hasError('firstName') ?' is-invalid' :''; ?><!--" >-->
+<!--                    <input type="text" name="firstName" id="firstName" value="--><?php //echo $model->firstName ?? '' 
+                                                                                        ?>
+<!--"-->
+<!--                           placeholder="First Name" class="form-control --><?php //echo $model->hasError('firstName') ?' is-invalid' :''; 
+                                                                                ?>
+<!--" >-->
 <!--                    <div class="invalid-feedback">-->
-<!--                        --><?php //echo $model->getFirstError('firstName')?>
+<!--                        --><?php //echo $model->getFirstError('firstName')
+                                ?>
 <!--                    </div>-->
 <!--                </div>-->
 <!--            </div>-->

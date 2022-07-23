@@ -32,6 +32,7 @@ class LoginModel extends Model
         }
 
         Application::$app->login($user);
+        return true;
     }
 
     public function labels(): array

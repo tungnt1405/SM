@@ -1,11 +1,3 @@
-<?php
-
-use app\core\Application;
-
-echo "<pre>";
-var_dump(Application::$app->user);
-echo "</pre>";
-?>
 <!doctype html>
 <html lang="en">
 
@@ -17,7 +9,7 @@ echo "</pre>";
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    <title>Customize Router</title>
+    <title><?= $this->title;?></title>
 </head>
 
 <body>
@@ -36,14 +28,29 @@ echo "</pre>";
                     <a class="nav-link" href="#">UnKnow</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/register">Register</a>
-                </li>
-            </ul>
+            <?php
+
+            use app\core\Application;
+
+            if (Application::isGuest()) : ?>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                </ul>
+            <?php else : ?>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/profile"><?php echo Application::$app->user->getDisplayName(); ?></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/logout"> Logout</a>
+                    </li>
+                </ul>
+            <?php endif; ?>
         </div>
     </nav>
     <div class="container">

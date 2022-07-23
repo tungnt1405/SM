@@ -2,16 +2,16 @@
 
 namespace app\models;
 
-use app\core\DbModel;
+use app\core\UserModel;
 
-class UsersModel extends DbModel
+class UsersModel extends UserModel
 {
     const STATUS_DEACTIVE = 0;
     const STATUS_ACTIVE = 1;
     const STATUS_DELETED = 2;
 
-    public string $firstName = '';
-    public string $lastName = '';
+    public string $firstname = '';
+    public string $lastname = '';
     public string $email = '';
     public string $password = '';
     public string $passwordConfirmation = '';
@@ -38,8 +38,8 @@ class UsersModel extends DbModel
     {
         // TODO: Implement rules() method.
         return [
-            'firstName' => [self::RULE_REQUIRED],
-            'lastName'  => [self::RULE_REQUIRED],
+            'firstname' => [self::RULE_REQUIRED],
+            'lastname'  => [self::RULE_REQUIRED],
             'email'     => [
                 self::RULE_REQUIRED, self::RULE_EMAIL,
                 [
@@ -54,18 +54,23 @@ class UsersModel extends DbModel
 
     public function attributes(): array
     {
-        return ['firstName', 'lastName', 'email', 'password', 'status', 'avatar'];
+        return ['firstname', 'lastname', 'email', 'password', 'status', 'avatar'];
     }
 
     public function labels(): array
     {
         return [
-            'firstName' => 'First Name',
-            'lastName' => 'Last Name',
+            'firstname' => 'First Name',
+            'lastname' => 'Last Name',
             'email' => 'Email Address',
             'password' => 'Password',
             'passwordConfirmation' => 'Password Confirmation',
             'avatar' => 'Avatar'
         ];
+    }
+
+    public function getDisplayName(): string
+    {
+        return $this->firstname . ' ' . $this->lastname;
     }
 }
