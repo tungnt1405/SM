@@ -2,19 +2,21 @@
 
 use app\core\Application;
 
-class m001_userTable
+class m003_manageTable
 {
     public function up()
     {
         $db = Application::$app->db;
 
-        $SQL = "CREATE TABLE users (
+        $SQL = "CREATE TABLE manages (
             id INT AUTO_INCREMENT PRIMARY KEY,
-            email VARCHAR(255) NOT NULL,
-            firstname VARCHAR(255) NOT NULL,
-            lastname VARCHAR(255) NOT NULL,
-            password VARCHAR(255) NOT NULL,
-            status TINYINT DEFAULT 0,
+            total int NOT NULL,
+            month int NOT NULL,
+            week_1 int NULL,
+            week_2 int NULL,
+            week_3 int NULL,
+            week_4 int NULL,
+            lastest_month int NOT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             modified TIMESTAMP Null
         ) ENGINE=INNODB;";
@@ -25,7 +27,7 @@ class m001_userTable
     {
         $db = Application::$app->db;
 
-        $SQL = 'DROP TABLE users;';
+        $SQL = 'DROP TABLE manages;';
 
         $db->pdo->exec($SQL);
     }

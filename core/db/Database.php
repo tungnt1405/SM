@@ -17,6 +17,7 @@ class Database
             $this->pdo = new \PDO($db_servername, $db_username, $db_password);
             // set the \PDO error mode to exception
             $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            $this->pdo->exec("SET NAMES 'utf8'");
             // echo "Connected successfully";
         } catch (\PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
@@ -88,5 +89,16 @@ class Database
     public function prepare($sql)
     {
         return $this->pdo->prepare($sql);
+    }
+
+    public function select(string $tablename, array $columns = [])
+    {
+        $colum = empty($columns) ? '*' : implode(', ', $columns);
+        $sql = "SELECT $colum FROM $tablename";
+        $statement = $this->prepare($sql);
+        // $statement->setFetchMode(\PDO::FETCH_ASSOC);
+        $statement->execute();
+
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 }

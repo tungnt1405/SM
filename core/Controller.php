@@ -42,5 +42,10 @@ class Controller
         return $this->middleware;
     }
 
-
+    public function setJson()
+    {
+        header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/json; charset=utf-8');
+        header("Access-Control-Allow-Headers: X-Requested-With");
+    }
 }

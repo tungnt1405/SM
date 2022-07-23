@@ -25,9 +25,10 @@ class Application
     public Views $view;
     public function __construct($root_path, array $config)
     {
-        $this->userClass = $config['userClass'];
         self::$app = $this;
         self::$root_path = $root_path;
+        // $this->userClass = $config['userClass'];
+        $this->userClass = UsersModel::class;
         $this->request = new Request();
         $this->response = new Response();
         $this->router = new Router($this->request, $this->response);
@@ -48,10 +49,10 @@ class Application
     public function run()
     {
         try {
-           echo $this->router->resolve();
-        }catch (\Exception $e) {
+            echo $this->router->resolve();
+        } catch (\Exception $e) {
             $this->response->httpStatusCode($e->getCode());
-            echo $this->view->renderView('_error',[
+            echo $this->view->renderView('_error', [
                 'exception' => $e,
             ]);
         }
