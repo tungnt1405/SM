@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
+import moment from 'moment'
 import NProgress from "vue-nprogress";
 Vue.config.productionTip = false;
 
@@ -12,7 +13,7 @@ const options = {
   http: false, // Show progressbar when doing Vue.http, default: true
 };
 Vue.use(NProgress, options);
-
+Vue.prototype.moment = moment
 const nprogress = new NProgress();
 
 new Vue({

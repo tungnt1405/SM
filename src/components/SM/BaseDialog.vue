@@ -15,37 +15,23 @@
           <v-row>
             <v-col cols="12" sm="6" md="4">
               <v-text-field
-                :value="editedItem.name"
-                label="Dessert name"
-                @input="updateItem({ property: 'name', data: $event })"
+                :value="editedItem.firstname"
+                label="First Name"
+                @input="updateItem({ property: 'firstname', data: $event })"
               ></v-text-field>
             </v-col>
             <v-col cols="12" sm="6" md="4">
               <v-text-field
-                :value="editedItem.calories"
-                label="Calories"
-                @input="updateItem({ property: 'calories', data: $event })"
+                :value="editedItem.lastname"
+                label="Last Name"
+                @input="updateItem({ property: 'lastname', data: $event })"
               ></v-text-field>
             </v-col>
             <v-col cols="12" sm="6" md="4">
               <v-text-field
-                :value="editedItem.fat"
-                label="Fat (g)"
-                @input="updateItem({ property: 'fat', data: $event })"
-              ></v-text-field>
-            </v-col>
-            <v-col cols="12" sm="6" md="4">
-              <v-text-field
-                :value="editedItem.carbs"
-                label="Carbs (g)"
-                @input="updateItem({ property: 'carbs', data: $event })"
-              ></v-text-field>
-            </v-col>
-            <v-col cols="12" sm="6" md="4">
-              <v-text-field
-                :value="editedItem.protein"
-                label="Protein (g)"
-                @input="updateItem({ property: 'protein', data: $event })"
+                :value="editedItem.age"
+                label="Age"
+                @input="updateItem({ property: 'age', data: $event })"
               ></v-text-field>
             </v-col>
           </v-row>
